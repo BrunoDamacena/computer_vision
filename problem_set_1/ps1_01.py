@@ -2,8 +2,8 @@ import cv2
 from matplotlib import pyplot
 import numpy
 
-pyplot.figure(num='Histogram')
-img = cv2.imread('image.png')
+pyplot.figure(num='Homogeneous')
+img = cv2.imread('solid.png')
 
 def showParameters(x,y):
     color = img[y,x]
