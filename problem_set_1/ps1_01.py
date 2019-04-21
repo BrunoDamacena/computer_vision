@@ -3,7 +3,7 @@ from matplotlib import pyplot
 import numpy
 
 pyplot.figure(num='Homogeneous')
-img = cv2.imread('solid.png')
+img = cv2.imread('image.png')
 
 def showParameters(x,y):
     color = img[y,x]
@@ -37,4 +37,3 @@ for i, col in enumerate(('b','g','r')):
 pyplot.show()
 
 cv2.waitKey()
-
