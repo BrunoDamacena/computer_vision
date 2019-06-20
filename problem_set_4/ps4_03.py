@@ -28,15 +28,13 @@ for fname in images:
         corners2 = cv.cornerSubPix(gray,corners, (11,11), (-1,-1), criteria)
         imgpoints.append(corners)
         cv.drawChessboardCorners(img, (8,6), corners2, ret)
-        #cv.imshow('img', img)
         cv.imwrite('03_output/img' + str(i) + '.jpg', img)
         i += 1
-        #cv.waitKey()
 cv.destroyAllWindows()
 
 ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
 
-img = cv.imread('1.png')
+img = cv.imread('03_output/img1.jpg')
 h,  w = img.shape[:2]
 newcameramtx, roi = cv.getOptimalNewCameraMatrix(mtx, dist, (w,h), 1, (w,h))
 
